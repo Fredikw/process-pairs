@@ -17,6 +17,8 @@ func main() {
 	stamp := 0
 	prev := 0
 
+	/* See if a primary exists. Read communication file and check if time_stamp updated */
+
 	for {
 
 		infile, err := ioutil.ReadFile("phoenix_com.txt")
