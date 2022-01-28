@@ -29,7 +29,6 @@ func main() {
 		if err != nil {
 			fmt.Println(err)
 		}
-
 		time_stamp, err := strconv.Atoi(strings.Split(string(infile), "\n")[1])
 
 		if time_stamp == prev {
@@ -37,7 +36,6 @@ func main() {
 		} else {
 			prev = time_stamp
 		}
-
 		time.Sleep(100 * time.Millisecond)
 	}
 
@@ -55,29 +53,24 @@ func main() {
 	Set count to latest value stored in phoenix_com.txt 
 	
 	*/
-
 	infile, err := ioutil.ReadFile("phoenix_com.txt")
 
 	if err != nil {
 		fmt.Println(err)
 	}
-
 	count, err := strconv.Atoi(strings.Split(string(infile), "\n")[0])
 
 	/*
 	Update count and stamp, and write to file 
 	
 	*/
-
 	for {
-
 		stamp = stamp + 1
 
 		if stamp%10 == 0 {
 			count = count + 1
 			fmt.Println(count)
 		}
-
 		s := strconv.Itoa(count) + "\n" + strconv.Itoa(stamp)
 
 		mydata := []byte(s)
@@ -87,8 +80,6 @@ func main() {
 		if err != nil {
 			fmt.Println(err)
 		}
-
 		time.Sleep(100 * time.Millisecond)
 	}
-
 }
