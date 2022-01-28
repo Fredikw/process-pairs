@@ -17,7 +17,10 @@ func main() {
 	stamp := 0
 	prev := 0
 
-	/* See if a primary exists. Read communication file and check if time_stamp updated */
+	/* 
+	See if a primary exists. Read communication file and check if time_stamp updated 
+	
+	*/
 
 	for {
 
@@ -38,14 +41,20 @@ func main() {
 		time.Sleep(100 * time.Millisecond)
 	}
 
-	/* Spawn backup */
+	/* 
+	Spawn backup 
+	
+	*/
 	cmd := exec.Command("./main", ".")
 	err := cmd.Start()
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	/* Set count to latest value stored in phoenix_com.txt */
+	/* 
+	Set count to latest value stored in phoenix_com.txt 
+	
+	*/
 
 	infile, err := ioutil.ReadFile("phoenix_com.txt")
 
@@ -55,7 +64,10 @@ func main() {
 
 	count, err := strconv.Atoi(strings.Split(string(infile), "\n")[0])
 
-	/* Update count and stamp, and write to file */
+	/*
+	Update count and stamp, and write to file 
+	
+	*/
 
 	for {
 
