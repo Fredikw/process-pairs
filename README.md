@@ -1,4 +1,4 @@
-Exercise 7: Phoenix
+Exercise - Phoenix
 ===================
 
 *This exercise should be done (and handed in) individually*
