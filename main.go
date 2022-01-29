@@ -18,7 +18,7 @@ func main() {
 	prev := 0
 	
 	/* 
-	See if a primary exists. Read communication file and check if time_stamp updated 
+	Check if a primary exists. Read communication file and check if time_stamp updated 
 	
 	*/
 	for {
